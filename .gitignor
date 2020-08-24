@@ -1,8 +1,7 @@
 .idea/
 lib/
 *.egg
-.idea/**/workspace.xml
 test.py
 *.txt
 *.xml
-xmls/
+
