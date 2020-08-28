@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Author, Genre, Book, BookInstance
+from .models import Author, Genre, Book, BookInstance, Article
 
 # admin.site.register(Book)
 admin.site.register(Genre)
@@ -44,4 +44,11 @@ class BookInstanceAdmin(admin.ModelAdmin):
         }),
     )
     pass
+
+
+@admin.register(Article)
+class Article(admin.ModelAdmin)
+    fields = ('title', 'subtitle', 'image', 'create_date')
+    pass
+
 

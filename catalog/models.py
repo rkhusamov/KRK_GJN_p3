@@ -105,7 +105,7 @@ class Author(models.Model):
 class Article(models.Model):
     # Модель для статьи на сайте
     title = models.CharField(max_length=150, help_text="Введите заголовок статьи")
-    subtitle = models.CharField(max_length=150, blank=True, null=True, help_text="Вветиде подзаголовок (не обязательно))
+    subtitle = models.CharField(max_length=150, blank=True, null=True, help_text="Вветиде подзаголовок")
     article_body = models.TextField (max_length=1000, help_text="Введите текст статьи")
     image = models.ImageField(blank=True, upload_to='/catalog/static/files')
     create_date = models.DateTimeField(auto_now_add=True)
@@ -116,4 +116,4 @@ class Article(models.Model):
         ordering = ["update_date"]
 
     def __str__(self):
-        return '%s, %s, %s'% (self.title, self.subtitle, self.article_body, self.image)
+        return '%s, %s, %s'% (self.title, self.subtitle, self.article_body)
