@@ -100,3 +100,10 @@ class Author(models.Model):
         String for representing the Model object.
         """
         return '%s, %s' % (self.last_name, self.first_name)
+
+
+class Article(models.Model):
+    # Модель для статьи на сайте
+    title = models.CharField(max_length=150, help_text="Введите заголовок статьи")
+    subtitle = models.CharField(max_length=150, blank=True, null=True, help_text="Вветиде подзаголовок (не обязательно))
+    article_body = models.TextField (max_length=1000, help_text="Введите текст статьи")
