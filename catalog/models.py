@@ -100,3 +100,20 @@ class Author(models.Model):
         String for representing the Model object.
         """
         return '%s, %s' % (self.last_name, self.first_name)
+
+
+class Article(models.Model):
+    # Модель для статьи на сайте
+    title = models.CharField(max_length=150, help_text="Введите заголовок статьи")
+    subtitle = models.CharField(max_length=150, blank=True, null=True, help_text="Вветиде подзаголовок")
+    article_body = models.TextField (max_length=1000, help_text="Введите текст статьи")
+    image = models.ImageField(blank=True, upload_to='/catalog/static/files')
+    create_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+
+# Сортировка статей по дате обновления
+    class Meta:
+        ordering = ["update_date"]
+
+    def __str__(self):
+        return '%s, %s, %s'% (self.title, self.subtitle, self.article_body)
