@@ -47,7 +47,7 @@ class BookInstanceAdmin(admin.ModelAdmin):
 
 
 @admin.register(Article)
-class Article(admin.ModelAdmin)
+class Article(admin.ModelAdmin):
     fields = ('title', 'subtitle', 'image', 'create_date')
     pass
 
